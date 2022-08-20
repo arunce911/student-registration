@@ -1,0 +1,126 @@
+@keyframes color {
+    0% {
+        background: #33CCCC;
+    }
+
+    20% {
+        background: #33CC36;
+    }
+
+    40% {
+        background: #B8CC33;
+    }
+
+    60% {
+        background: #FCCA00;
+    }
+
+    80% {
+        background: #33CC36;
+    }
+
+    100% {
+        background: #33CCCC;
+    }
+}
+
+body {
+    background: #33CCCC;
+    /* Fallback */
+    animation: color 9s infinite linear;
+    text-align: center;
+    padding: 2em;
+}
+
+.container {
+    border-radius: 45px;
+    background: #ffffff;
+    box-shadow: inset 35px 35px 63px #bdbdbd,
+        inset -35px -35px 63px #ffffff;
+}
+
+.naming {
+    display: flex;
+    justify-content: center;
+}
+
+.inputGroup {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 1em 0 1em 0;
+    max-width: 190px;
+    position: relative;
+}
+
+.inputGroup input {
+    font-size: 100%;
+    padding: 0.8em;
+    outline: none;
+    border: 2px solid rgb(200, 200, 200);
+    background-color: transparent;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.inputGroup label {
+    font-size: 100%;
+    position: absolute;
+    left: 0;
+    padding: 0.8em;
+    margin-left: 0.5em;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    color: rgb(100, 100, 100);
+}
+
+.inputGroup :is(input:focus, input:valid)~label {
+    transform: translateY(-50%) scale(.9);
+    margin: 0em;
+    margin-left: 1.3em;
+    padding: 0.4em;
+    background-color: #e8e8e8;
+}
+
+.inputGroup :is(input:focus, input:valid) {
+    border-color: rgb(150, 150, 200);
+}
+
+.form-select,
+.form-floating {
+    display: inline-flex;
+    text-align: center;
+    width: 50%;
+}
+
+button {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 9em;
+    height: 3em;
+    border-radius: 30em;
+    font-size: 15px;
+    font-family: inherit;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 6px 6px 12px #c5c5c5,
+        -6px -6px 12px #ffffff;
+}
+
+button::before {
+    content: '';
+    width: 0;
+    height: 3em;
+    border-radius: 30em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+}
+
+button:hover::before {
+    width: 9em;
+}
